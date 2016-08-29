@@ -1,0 +1,18 @@
+<h1>Welcome to my Awesome Sinatra Application!</h1>
+<%= @lucky_number %>
+
+<%# In order for the form to work with our Sinatra application we need to make
+    sure that the form has a `method` and `action` attributes. The method/action
+    should map to an action block in app.rb e.g: post "/greet" %>
+<form method="post" action="/greet">
+  <div>
+    <input type="text" name="user_name">
+  </div>
+  <input type="submit" value="Greet me!">
+</form>
+
+<% if @name %>
+  <pre>
+    <%= Cowsay.say "Hello #{@name}" %>
+  </pre>
+<% end %>
