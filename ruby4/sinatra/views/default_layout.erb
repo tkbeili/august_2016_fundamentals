@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome App</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <%# the default_layout will be used by all the actions inside our app.rb
+          which means if we want a piece of code to be included on every page
+          we should put it in this file. %>
+      <a href="/">Home</a>
+      |
+      <a href="/blog">Blog</a>
+      |
+      <a href="/contact">Contact Us</a>
+
+      | Select a language:
+      <a href="/lang/English">English</a>
+      <a href="/lang/French">French</a>
+      <a href="/lang/Spanish">Spanish</a>
+      (You selected: <%= session[:language] %>)
+      <hr>
+      <%= yield %>
+    </div>
+  </body>
+</html>
